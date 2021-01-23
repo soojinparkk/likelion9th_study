@@ -1,54 +1,98 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
+        <script
+        src="http://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
         <meta charset="UTF-8">
         <title>My Info</title>
     </head>
 
     <body>
-        <h1>My Info</h1>
+        <div class="container">
+            <h1>My Info</h1>
+            <br>
 
-        <form action="전송 받을 대상">
-            ID: <input type="text" name="myid">
-            PW: <input type="password" name="mypw">
-            <input type="submit">
-        </form>
-        <br>
+            <form class="form-inline">
+                <div class="form-group">
+                  <label for="userEmail">Email</label>
+                  <input type="email" class="form-control" id="userEmail" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="userPw">Password</label>
+                  <input type="password" class="form-control" id="userPw" placeholder="Password">
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Remember me
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-info">Login</button>
+            </form>
+            <br>
 
-        <img src="burger.jpg" height="300"/>
-        <br>
+            <!--
+            <form action="전송 받을 대상" method="GET">
+                <div>
+                    <label for="userId">ID: </label>
+                    <input type="text" id="userId" name="myId">
+                </div>
+                <div>
+                    <label for="userPw">PW: </label>
+                    <input type="password" id="userPw" name="myPw">
+                    <input type="submit">
+                </div>
+            </form>
+            -->
 
-        <form action="전송 받을 대상">
-            <h2>Diary</h2>
-            Title: <input type="text" name="diarytitle"><br>
-            Today's Weather: 
-            <select name="diaryweather">
-                <option value="sunny">Sunny</option>
-                <option value="hot">Hot</option>
-                <option value="cool">Cool</option>
-                <option value="cold">Cold</option>
-                <option value="rainy">Rainy</option>
-            </select><br>
-            Content: <br>
-            <textarea cols="30" rows="10" name="diarycontent"></textarea><br>
-            <input type="submit">
-        </form>
-        <br>
+            <img src="burger.jpg" height="300"/>
+            <br>
 
-        <h2>Ordered List</h2>
-        <ol>
-            <li><a href="one.html">one</a></li>
-            <li><a href="two.html">two</a></li>
-            <li><a href="three.html">three</a></li>
-        </ol>
-        <br>
+            <form action="전송 받을 대상" method="GET">
+                <h2>Diary</h2>
+                Title: <input type="text" name="diaryTitle">
+                <div>
+                    <label for="weather">Weather: </label> 
+                    <select name="diaryWeather" id="weather">
+                        <option value="sunny">Sunny</option>
+                        <option value="hot">Hot</option>
+                        <option value="cool">Cool</option>
+                        <option value="cold">Cold</option>
+                        <option value="rainy">Rainy</option>
+                    </select>
+                </div>
+                Content: <br>
+                <textarea name="diaryContent" placeholder="content" cols="30" rows="10"></textarea><br>
+                <input type="submit">
+            </form>
+            <br>
 
-        <h2>Unordered List</h2>
-        <ul>
-            <li>Hi</li>
-            <li>I am</li>
-            <li>Soojin</li>
-        </ul>
-        <br>
+            <h2>Ordered List</h2>
+            <ol>
+                <li><a href="one.html">one</a></li>
+                <li><a href="two.html">two</a></li>
+                <li><a href="three.html">three</a></li>
+            </ol>
+            <br>
+
+            <h2>Unordered List</h2>
+            <ul>
+                <li>Hi</li>
+                <li>I am</li>
+                <li>Soojin</li>
+            </ul>
+            <br>
+        </div>
     </body>
 </html>
