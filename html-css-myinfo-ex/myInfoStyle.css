@@ -1,0 +1,75 @@
+
+.nav {
+	height: 40px;
+	border-bottom: 1px solid black;
+}
+
+.bfProfile {
+	margin-top: 15px;
+	margin-left: 30px;
+}
+
+.myProfile {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.myTitle {
+	margin-top: 50px;
+	margin-bottom: 40px;
+	font-size: 3.5rem;
+	font-weight: bold;
+}
+
+.subMyTitle {
+	margin-top: 30px;
+	margin-bottom: 50px;
+	width: 550px;
+	font-weight: 300;
+}
+
+.myTMI {
+	display: flex;
+}
+
+.myInfo {
+	width: 300px;
+	height: 210px;
+	border: 1px solid black;
+	margin: 10px;
+	margin-bottom: 50px;
+	border-radius: 4px;
+}
+
+.myInfoTitle {
+	background: rgba(0, 0, 0, .03);
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid black;
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+.myInfoDetails {
+	width: 250px;
+	font-weight: 300;
+	text-align: left;
+}
+
+.buttonHere {
+	padding: .5rem 1rem;
+	font-size: 1.0rem;
+	border-radius: 4px;
+	color: white;
+	background-color: skyblue;
+	border-color: skyblue;
+	margin-bottom: 20px;
+}
+
+.myLink {
+	margin-bottom: 50px;
+}
+
+.link {
+	padding: 15px;
+}
