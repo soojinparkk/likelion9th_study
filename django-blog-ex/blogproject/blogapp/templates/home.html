@@ -12,6 +12,10 @@
 <body>
     <h1>Blog Project</h1>
 
+    <div>
+        <a href="{% url 'new' %}">WRITE</a>
+    </div>
+
     <div class="container">
         {% for blog in blogs %}
         <div>
