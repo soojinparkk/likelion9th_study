@@ -1,24 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DETAIL</title>
-    <style>
-        body{ text-align: center; }
-    </style>
-</head>
-<body>
-    <h1>{{blog.title}}</h1>
-    <div>
-        WRITER: {{blog.writer}}<br>
-        DATE: {{blog.pub_date}}<br>
-    </div>
-    <br><hr>
-    <p>{{blog.body}}</p>
+{% extends 'base.html' %}
 
-    <a href="{% url 'edit' blog.id %}">EDIT</a>
-    <a href="{% url 'delete' blog.id %}">DELETE</a>
-</body>
-</html>
+{% block content %}
+    <h1>{{blog.title}}</h1><br>
+
+    <div class="card text-center">
+        <div class="card-body">
+            <h5 class="card-title">Writer: {{blog.writer}}</h5>
+            <p class="card-text">{{blog.body}}</p>
+            <a href="{% url 'edit' blog.id %}" class="btn btn-outline-success">EDIT</a>
+            <a href="{% url 'delete' blog.id %}" class="btn btn-outline-danger">DELETE</a>
+        </div>
+        <div class="card-footer text-muted">
+            {{blog.pub_date}}
+        </div>
+    </div>
+{% endblock %}

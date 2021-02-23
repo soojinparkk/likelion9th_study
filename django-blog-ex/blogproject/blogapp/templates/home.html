@@ -1,33 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLOG</title>
-    <style>
-        body{ text-align: center; }
-    </style>
-</head>
-<body>
-    <h1>Blog Project</h1>
+{% extends 'base.html' %}
 
-    <div>
-        <a href="{% url 'new' %}">WRITE</a>
-    </div>
+{% block content %}
+    <h1>NEW</h1><br>
 
     <div class="container">
         {% for blog in blogs %}
-        <div>
-            <h3>{{blog.title}}</h3>
-            <!-- {{blog.id}} -->
-            WRITER: {{blog.writer}}<br>
-            {{blog.summery}}
-            <a href="{% url 'detail' blog.id %}">...more</a>
-            <br>
-        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+                Writer: {{blog.writer}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{blog.title}}</h5>
+                <p class="card-text">{{blog.summery}}</p>
+                <a href="{% url 'detail' blog.id %}">...more</a>
+            </div>
+          </div><br>
         {% endfor %}
     </div>
-
-</body>
-</html>
+{% endblock %}
