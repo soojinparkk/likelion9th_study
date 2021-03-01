@@ -16,6 +16,7 @@ import my_settings
 DATABASES = my_settings.DATABASES
 SECRET_KEY = my_settings.SECRET_KEY
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -103,3 +104,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_DIRS = [
+    os.path.join(BASE_DIR, 'blogapp', 'static')
+]
+# 현재 static 파일이 어디에 있는지 경로 설정
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# static 파일을 어디에 모을지(collective)
