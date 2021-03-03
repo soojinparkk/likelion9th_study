@@ -112,3 +112,9 @@ STATIC_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # static 파일을 어디에 모을지(collective)
+
+MEDIA_URL = '/media/'
+# 이용자에게 사진을 보여줄 때 시작하는 url 설정
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# 이용자가 업로드한 파일을 모아두는 곳

@@ -7,6 +7,11 @@
         <div class="card-body">
             <h5 class="card-title">Writer: {{blog.writer}}</h5>
             <p class="card-text">{{blog.body}}</p>
+
+            {% if blog.image %}
+            <p><img src="{{blog.image.url}}" alt=""></p>
+            {% endif %}
+
             <a href="{% url 'edit' blog.id %}" class="btn btn-outline-success">EDIT</a>
             <a href="{% url 'delete' blog.id %}" class="btn btn-outline-danger">DELETE</a>
         </div>

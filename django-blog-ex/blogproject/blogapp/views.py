@@ -20,6 +20,8 @@ def create(request):
     new_blog.write = request.POST['writer']
     new_blog.body = request.POST['body']
     new_blog.pub_date = timezone.now()                  # 현재 시각 저장
+    # new_blog.image = request.FILES['image']
+    new_blog.image = request.FILES.get('image', '')
     new_blog.save()                                     # DB에 적용
     return redirect('detail', new_blog.id)              # detail 호출
 
