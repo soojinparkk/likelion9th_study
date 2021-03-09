@@ -12,7 +12,8 @@ def login_view(request):
             user = authenticate(request=request, username=username, password=password)  # 인증을 받을 객체
             if user is not None:
                 login(request, user)
-            return redirect('home')
+                return redirect('home')
+        return redirect('login')
 
     # GET 방식으로 요청이 들어올 경우
     else :
@@ -22,3 +23,17 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+def register_view(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+        else :
+            return redirect('signup')
+
+    else :
+        form = UserCreationForm()
+        return render(request, 'signup.html', {'form':form})
