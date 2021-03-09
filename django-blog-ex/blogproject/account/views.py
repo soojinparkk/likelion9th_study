@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm      # 각각 로그인, 회원가입을 위한 form
+from django.contrib.auth.forms import AuthenticationForm#, UserCreationForm      # 각각 로그인, 회원가입을 위한 form
 from django.contrib.auth import authenticate, login, logout
+from .forms import RegisterForm
 
 def login_view(request):
     # POST 방식으로 요청이 들어올 경우
@@ -26,7 +27,8 @@ def logout_view(request):
 
 def register_view(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        # form = UserCreationForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
@@ -35,5 +37,6 @@ def register_view(request):
             return redirect('signup')
 
     else :
-        form = UserCreationForm()
+        # form = UserCreationForm()
+        form = RegisterForm()
         return render(request, 'signup.html', {'form':form})
