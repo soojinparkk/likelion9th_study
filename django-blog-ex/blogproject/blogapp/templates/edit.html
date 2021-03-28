@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    <h1>UPDATE YOUR BLOG</h1><br>
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <link rel="stylesheet" href="{% static 'detail.css' %}">
+    {% endblock %}
+</head>
 
-    <form action="{% url 'update' blog.id %}" method="POST">
+{% block content %}
+    <h1 class="title">게시글을 수정해주세요</h1><br>
+
+    <form action="{% url 'update' blog.id %}" method="POST" class="form">
         {% csrf_token %}
-        <p>TITLE: <input type="text" name="title" value="{{blog.title}}"></p>
-        <p>WRITER: <input type="text" name="writer" value="{{blog.writer}}"></p>
-        CONTENT: <textarea name="body" id="" cols="30" rows="10">{{blog.body}}</textarea>
-        <button type="submit">SUBMIT</button>
+        <p>제목:<input class="form-control" type="text" name="title" value="{{blog.title}}"></p>
+        <p>작성자:<input class="form-control" type="text" name="writer" value="{{blog.writer}}"></p>
+        내용:<textarea class="form-control" name="body" id="" cols="30" rows="10">{{blog.body}}</textarea><br>
+        <div style="text-align: center;">
+            <button type="submit" class="btn btn-dark" id="btn-orange">수정하기</button>
+        </div>
     </form>
 {% endblock %}

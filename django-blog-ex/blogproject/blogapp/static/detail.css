@@ -2,8 +2,16 @@
     background-color: orange;
 }
 
-#title {
-    color: white; font-weight: bold;
+.form {
+    width: 450px;
+    margin: 0 auto;
+    color: white;
+    text-align: left;
+}
+
+.title {
+    color: white;
+    font-weight: bold;
 }
 
 #card-writer {
@@ -15,8 +23,8 @@
 
 #card-content {
     color: white;
-    font-size:large;
-    margin-top: 30px;
+    font-size: medium;
+    padding: 50px;
 }
 
 #card-border {

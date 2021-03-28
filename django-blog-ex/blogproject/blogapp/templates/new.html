@@ -8,7 +8,7 @@
 </head>
 
 {% block content %}
-    <h1 id="title">원하는 게시글을 작성해주세요</h1><br>
+    <h1 class="title">원하는 게시글을 작성해주세요</h1><br>
 
     <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data" style="color: white;">
         {% csrf_token %}
