@@ -1,19 +1,31 @@
 {% extends 'base.html' %}
 
+<head>
+    {% load static %}
+    {% block extrahead %}
+    <link rel="stylesheet" href="{% static 'detail.css' %}">
+    {% endblock %}
+</head>
+
 {% block content %}
-    <h1>{{blog.title}}</h1><br>
+    <!-- admin 계정일 경우만 밑의 버튼 보임 -->
+    <p style="text-align: right;">
+    <a href="{% url 'edit' blog.id %}" class="btn btn-dark" id="btn-orange">수정하기</a>
+    <a href="{% url 'delete' blog.id %}" class="btn btn-dark" id="btn-orange">삭제하기</a>
+    </p>
 
-    <div class="card text-center">
-        <div class="card-body">
-            <h5 class="card-title">Writer: {{blog.writer}}</h5>
-            <p class="card-text">{{blog.body}}</p>
+    <h1 id="title">{{blog.title}}</h1>
 
+    <h5 class="card-title" id="card-writer">작성자: {{blog.writer}}</h5>
+    <div class="card text-center" id="card-border">
+        <div class="card-body" style="padding: 50px;">
+            
             {% if blog.image %}
-            <p><img src="{{blog.image.url}}" alt=""></p>
+            <p><img src="{{blog.image.url}}" alt="" class="img-fluid"></p>
             {% endif %}
 
-            <a href="{% url 'edit' blog.id %}" class="btn btn-outline-success">EDIT</a>
-            <a href="{% url 'delete' blog.id %}" class="btn btn-outline-danger">DELETE</a>
+            <p class="card-text" id="card-content">{{blog.body}}</p>
+
         </div>
         <div class="card-footer text-muted">
             {{blog.pub_date}}

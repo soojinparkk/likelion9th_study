@@ -1,0 +1,26 @@
+#btn-orange {
+    background-color: orange;
+}
+
+#title {
+    color: white; font-weight: bold;
+}
+
+#card-writer {
+    color: white;
+    text-align: right;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+#card-content {
+    color: white;
+    font-size:large;
+    margin-top: 30px;
+}
+
+#card-border {
+    border-width: 3px;
+    border-color: orange;
+    background-color: black;
+}
